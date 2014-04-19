@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA6735231902C203005B6FDB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735221902C203005B6FDB /* FacebookSDK.framework */; };
+		AA6735271902C3FE005B6FDB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735261902C3FE005B6FDB /* Parse.framework */; };
+		AA6735291902C438005B6FDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735281902C438005B6FDB /* AudioToolbox.framework */; };
+		AA67352B1902C43E005B6FDB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67352A1902C43E005B6FDB /* CFNetwork.framework */; };
+		AA67352D1902C44C005B6FDB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67352C1902C44C005B6FDB /* CoreLocation.framework */; };
+		AA67352F1902C459005B6FDB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67352E1902C459005B6FDB /* libz.dylib */; };
+		AA6735311902C463005B6FDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735301902C463005B6FDB /* MobileCoreServices.framework */; };
+		AA6735331902C469005B6FDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735321902C469005B6FDB /* QuartzCore.framework */; };
+		AA6735351902C472005B6FDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735341902C472005B6FDB /* Security.framework */; };
+		AA6735371902C479005B6FDB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735361902C479005B6FDB /* StoreKit.framework */; };
+		AA6735391902C483005B6FDB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735381902C483005B6FDB /* SystemConfiguration.framework */; };
+		AA67353C1902C66E005B6FDB /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67353B1902C66E005B6FDB /* LoginView.m */; };
+		AA6735421902D07F005B6FDB /* SCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67353F1902D07F005B6FDB /* SCSearchViewController.m */; };
+		AA6735431902D07F005B6FDB /* SCYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6735411902D07F005B6FDB /* SCYouViewController.m */; };
+		AA755B4618FF66D40089195A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4518FF66D40089195A /* Foundation.framework */; };
+		AA755B4818FF66D40089195A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4718FF66D40089195A /* CoreGraphics.framework */; };
+		AA755B4A18FF66D40089195A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4918FF66D40089195A /* UIKit.framework */; };
+		AA755B5018FF66D40089195A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA755B4E18FF66D40089195A /* InfoPlist.strings */; };
+		AA755B5218FF66D40089195A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B5118FF66D40089195A /* main.m */; };
+		AA755B5618FF66D40089195A /* beatbucketAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B5518FF66D40089195A /* beatbucketAppDelegate.m */; };
+		AA755B5918FF66D40089195A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA755B5718FF66D40089195A /* Main_iPhone.storyboard */; };
+		AA755B5C18FF66D40089195A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA755B5A18FF66D40089195A /* Main_iPad.storyboard */; };
+		AA755B5F18FF66D40089195A /* beatbucketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B5E18FF66D40089195A /* beatbucketViewController.m */; };
+		AA755B6118FF66D40089195A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA755B6018FF66D40089195A /* Images.xcassets */; };
+		AA755B6818FF66D40089195A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B6718FF66D40089195A /* XCTest.framework */; };
+		AA755B6918FF66D40089195A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4518FF66D40089195A /* Foundation.framework */; };
+		AA755B6A18FF66D40089195A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4918FF66D40089195A /* UIKit.framework */; };
+		AA755B7218FF66D40089195A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA755B7018FF66D40089195A /* InfoPlist.strings */; };
+		AA755B7418FF66D40089195A /* BeatBucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B7318FF66D40089195A /* BeatBucketTests.m */; };
+		AA755B84190038680089195A /* ExploreController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B83190038680089195A /* ExploreController.m */; };
+		AA755B8719005F0E0089195A /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B8619005F0E0089195A /* JASidePanelController.m */; };
+		AA755B8A19005FEF0089195A /* SidePanelControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B8919005FEF0089195A /* SidePanelControllerViewController.m */; };
+		AA755B8D19006C590089195A /* LeftPanelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B8C19006C590089195A /* LeftPanelTableViewController.m */; };
+		AA755B90190073BD0089195A /* NearbyController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B8F190073BD0089195A /* NearbyController.m */; };
+		AA755B93190073EC0089195A /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B92190073EC0089195A /* ProfileController.m */; };
+		AA755B961900741A0089195A /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B951900741A0089195A /* FriendsController.m */; };
+		AA755B99190074560089195A /* NowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B98190074560089195A /* NowPlayingController.m */; };
+		AA755B9C190074C30089195A /* MyPlaylistsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B9B190074C30089195A /* MyPlaylistsController.m */; };
+		AA755B9F190077C20089195A /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA755B9E190077C20089195A /* UIViewController+JASidePanel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA755B6B18FF66D40089195A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA755B3A18FF66D40089195A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA755B4118FF66D40089195A;
+			remoteInfo = BeatBucket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA6735221902C203005B6FDB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		AA6735261902C3FE005B6FDB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		AA6735281902C438005B6FDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AA67352A1902C43E005B6FDB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AA67352C1902C44C005B6FDB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AA67352E1902C459005B6FDB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AA6735301902C463005B6FDB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AA6735321902C469005B6FDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA6735341902C472005B6FDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AA6735361902C479005B6FDB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AA6735381902C483005B6FDB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA67353A1902C66E005B6FDB /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		AA67353B1902C66E005B6FDB /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		AA67353E1902D07F005B6FDB /* SCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSearchViewController.h; sourceTree = "<group>"; };
+		AA67353F1902D07F005B6FDB /* SCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSearchViewController.m; sourceTree = "<group>"; };
+		AA6735401902D07F005B6FDB /* SCYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYouViewController.h; sourceTree = "<group>"; };
+		AA6735411902D07F005B6FDB /* SCYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYouViewController.m; sourceTree = "<group>"; };
+		AA755B4218FF66D40089195A /* BeatBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA755B4518FF66D40089195A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA755B4718FF66D40089195A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA755B4918FF66D40089195A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AA755B4D18FF66D40089195A /* BeatBucket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeatBucket-Info.plist"; sourceTree = "<group>"; };
+		AA755B4F18FF66D40089195A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA755B5118FF66D40089195A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA755B5318FF66D40089195A /* BeatBucket-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeatBucket-Prefix.pch"; sourceTree = "<group>"; };
+		AA755B5418FF66D40089195A /* beatbucketAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beatbucketAppDelegate.h; sourceTree = "<group>"; };
+		AA755B5518FF66D40089195A /* beatbucketAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beatbucketAppDelegate.m; sourceTree = "<group>"; };
+		AA755B5818FF66D40089195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		AA755B5B18FF66D40089195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		AA755B5D18FF66D40089195A /* beatbucketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beatbucketViewController.h; sourceTree = "<group>"; };
+		AA755B5E18FF66D40089195A /* beatbucketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beatbucketViewController.m; sourceTree = "<group>"; };
+		AA755B6018FF66D40089195A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA755B6618FF66D40089195A /* BeatBucketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeatBucketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA755B6718FF66D40089195A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AA755B6F18FF66D40089195A /* BeatBucketTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeatBucketTests-Info.plist"; sourceTree = "<group>"; };
+		AA755B7118FF66D40089195A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA755B7318FF66D40089195A /* BeatBucketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeatBucketTests.m; sourceTree = "<group>"; };
+		AA755B82190038680089195A /* ExploreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreController.h; path = Playlists/ExploreController.h; sourceTree = "<group>"; };
+		AA755B83190038680089195A /* ExploreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreController.m; path = Playlists/ExploreController.m; sourceTree = "<group>"; };
+		AA755B8519005F0E0089195A /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		AA755B8619005F0E0089195A /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		AA755B8819005FEF0089195A /* SidePanelControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelControllerViewController.h; sourceTree = "<group>"; };
+		AA755B8919005FEF0089195A /* SidePanelControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidePanelControllerViewController.m; sourceTree = "<group>"; };
+		AA755B8B19006C590089195A /* LeftPanelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelTableViewController.h; path = Library/LeftPanelTableViewController.h; sourceTree = "<group>"; };
+		AA755B8C19006C590089195A /* LeftPanelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelTableViewController.m; path = Library/LeftPanelTableViewController.m; sourceTree = "<group>"; };
+		AA755B8E190073BD0089195A /* NearbyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyController.h; sourceTree = "<group>"; };
+		AA755B8F190073BD0089195A /* NearbyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyController.m; sourceTree = "<group>"; };
+		AA755B91190073EC0089195A /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController.h; sourceTree = "<group>"; };
+		AA755B92190073EC0089195A /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
+		AA755B941900741A0089195A /* FriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsController.h; sourceTree = "<group>"; };
+		AA755B951900741A0089195A /* FriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsController.m; sourceTree = "<group>"; };
+		AA755B97190074560089195A /* NowPlayingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlayingController.h; sourceTree = "<group>"; };
+		AA755B98190074560089195A /* NowPlayingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlayingController.m; sourceTree = "<group>"; };
+		AA755B9A190074C30089195A /* MyPlaylistsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPlaylistsController.h; sourceTree = "<group>"; };
+		AA755B9B190074C30089195A /* MyPlaylistsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPlaylistsController.m; sourceTree = "<group>"; };
+		AA755B9D190077C20089195A /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		AA755B9E190077C20089195A /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA755B3F18FF66D40089195A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6735391902C483005B6FDB /* SystemConfiguration.framework in Frameworks */,
+				AA6735371902C479005B6FDB /* StoreKit.framework in Frameworks */,
+				AA6735351902C472005B6FDB /* Security.framework in Frameworks */,
+				AA6735331902C469005B6FDB /* QuartzCore.framework in Frameworks */,
+				AA6735311902C463005B6FDB /* MobileCoreServices.framework in Frameworks */,
+				AA67352F1902C459005B6FDB /* libz.dylib in Frameworks */,
+				AA67352D1902C44C005B6FDB /* CoreLocation.framework in Frameworks */,
+				AA755B4818FF66D40089195A /* CoreGraphics.framework in Frameworks */,
+				AA67352B1902C43E005B6FDB /* CFNetwork.framework in Frameworks */,
+				AA6735291902C438005B6FDB /* AudioToolbox.framework in Frameworks */,
+				AA6735231902C203005B6FDB /* FacebookSDK.framework in Frameworks */,
+				AA755B4A18FF66D40089195A /* UIKit.framework in Frameworks */,
+				AA755B4618FF66D40089195A /* Foundation.framework in Frameworks */,
+				AA6735271902C3FE005B6FDB /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA755B6318FF66D40089195A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA755B6818FF66D40089195A /* XCTest.framework in Frameworks */,
+				AA755B6A18FF66D40089195A /* UIKit.framework in Frameworks */,
+				AA755B6918FF66D40089195A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA67353D1902D07F005B6FDB /* SoundCloudView */ = {
+			isa = PBXGroup;
+			children = (
+				AA67353E1902D07F005B6FDB /* SCSearchViewController.h */,
+				AA67353F1902D07F005B6FDB /* SCSearchViewController.m */,
+				AA6735401902D07F005B6FDB /* SCYouViewController.h */,
+				AA6735411902D07F005B6FDB /* SCYouViewController.m */,
+			);
+			path = SoundCloudView;
+			sourceTree = "<group>";
+		};
+		AA755B3918FF66D40089195A = {
+			isa = PBXGroup;
+			children = (
+				AA755B4B18FF66D40089195A /* BeatBucket */,
+				AA755B6D18FF66D40089195A /* BeatBucketTests */,
+				AA755B4418FF66D40089195A /* Frameworks */,
+				AA755B4318FF66D40089195A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA755B4318FF66D40089195A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA755B4218FF66D40089195A /* BeatBucket.app */,
+				AA755B6618FF66D40089195A /* BeatBucketTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA755B4418FF66D40089195A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA6735381902C483005B6FDB /* SystemConfiguration.framework */,
+				AA6735361902C479005B6FDB /* StoreKit.framework */,
+				AA6735341902C472005B6FDB /* Security.framework */,
+				AA6735321902C469005B6FDB /* QuartzCore.framework */,
+				AA6735301902C463005B6FDB /* MobileCoreServices.framework */,
+				AA67352E1902C459005B6FDB /* libz.dylib */,
+				AA67352C1902C44C005B6FDB /* CoreLocation.framework */,
+				AA67352A1902C43E005B6FDB /* CFNetwork.framework */,
+				AA6735281902C438005B6FDB /* AudioToolbox.framework */,
+				AA6735261902C3FE005B6FDB /* Parse.framework */,
+				AA6735221902C203005B6FDB /* FacebookSDK.framework */,
+				AA755B4518FF66D40089195A /* Foundation.framework */,
+				AA755B4718FF66D40089195A /* CoreGraphics.framework */,
+				AA755B4918FF66D40089195A /* UIKit.framework */,
+				AA755B6718FF66D40089195A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA755B4B18FF66D40089195A /* BeatBucket */ = {
+			isa = PBXGroup;
+			children = (
+				AA67353D1902D07F005B6FDB /* SoundCloudView */,
+				AA755B5418FF66D40089195A /* beatbucketAppDelegate.h */,
+				AA755B5518FF66D40089195A /* beatbucketAppDelegate.m */,
+				AA755B5718FF66D40089195A /* Main_iPhone.storyboard */,
+				AA67353A1902C66E005B6FDB /* LoginView.h */,
+				AA67353B1902C66E005B6FDB /* LoginView.m */,
+				AA755B97190074560089195A /* NowPlayingController.h */,
+				AA755B98190074560089195A /* NowPlayingController.m */,
+				AA755B9A190074C30089195A /* MyPlaylistsController.h */,
+				AA755B9B190074C30089195A /* MyPlaylistsController.m */,
+				AA755B91190073EC0089195A /* ProfileController.h */,
+				AA755B92190073EC0089195A /* ProfileController.m */,
+				AA755B8E190073BD0089195A /* NearbyController.h */,
+				AA755B8F190073BD0089195A /* NearbyController.m */,
+				AA755B82190038680089195A /* ExploreController.h */,
+				AA755B83190038680089195A /* ExploreController.m */,
+				AA755B941900741A0089195A /* FriendsController.h */,
+				AA755B951900741A0089195A /* FriendsController.m */,
+				AA755B5A18FF66D40089195A /* Main_iPad.storyboard */,
+				AA755B5D18FF66D40089195A /* beatbucketViewController.h */,
+				AA755B5E18FF66D40089195A /* beatbucketViewController.m */,
+				AA755B6018FF66D40089195A /* Images.xcassets */,
+				AA755B81190033FC0089195A /* Library */,
+				AA755B4C18FF66D40089195A /* Supporting Files */,
+			);
+			path = BeatBucket;
+			sourceTree = "<group>";
+		};
+		AA755B4C18FF66D40089195A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA755B4D18FF66D40089195A /* BeatBucket-Info.plist */,
+				AA755B4E18FF66D40089195A /* InfoPlist.strings */,
+				AA755B5118FF66D40089195A /* main.m */,
+				AA755B5318FF66D40089195A /* BeatBucket-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA755B6D18FF66D40089195A /* BeatBucketTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA755B7318FF66D40089195A /* BeatBucketTests.m */,
+				AA755B6E18FF66D40089195A /* Supporting Files */,
+			);
+			path = BeatBucketTests;
+			sourceTree = "<group>";
+		};
+		AA755B6E18FF66D40089195A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA755B6F18FF66D40089195A /* BeatBucketTests-Info.plist */,
+				AA755B7018FF66D40089195A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA755B81190033FC0089195A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AA755B9D190077C20089195A /* UIViewController+JASidePanel.h */,
+				AA755B9E190077C20089195A /* UIViewController+JASidePanel.m */,
+				AA755B8919005FEF0089195A /* SidePanelControllerViewController.m */,
+				AA755B8819005FEF0089195A /* SidePanelControllerViewController.h */,
+				AA755B8519005F0E0089195A /* JASidePanelController.h */,
+				AA755B8619005F0E0089195A /* JASidePanelController.m */,
+				AA755B8B19006C590089195A /* LeftPanelTableViewController.h */,
+				AA755B8C19006C590089195A /* LeftPanelTableViewController.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA755B4118FF66D40089195A /* BeatBucket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA755B7718FF66D40089195A /* Build configuration list for PBXNativeTarget "BeatBucket" */;
+			buildPhases = (
+				AA755B3E18FF66D40089195A /* Sources */,
+				AA755B3F18FF66D40089195A /* Frameworks */,
+				AA755B4018FF66D40089195A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeatBucket;
+			productName = BeatBucket;
+			productReference = AA755B4218FF66D40089195A /* BeatBucket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA755B6518FF66D40089195A /* BeatBucketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA755B7A18FF66D40089195A /* Build configuration list for PBXNativeTarget "BeatBucketTests" */;
+			buildPhases = (
+				AA755B6218FF66D40089195A /* Sources */,
+				AA755B6318FF66D40089195A /* Frameworks */,
+				AA755B6418FF66D40089195A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA755B6C18FF66D40089195A /* PBXTargetDependency */,
+			);
+			name = BeatBucketTests;
+			productName = BeatBucketTests;
+			productReference = AA755B6618FF66D40089195A /* BeatBucketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA755B3A18FF66D40089195A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = beatbucket;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ethan Blackburn";
+				TargetAttributes = {
+					AA755B6518FF66D40089195A = {
+						TestTargetID = AA755B4118FF66D40089195A;
+					};
+				};
+			};
+			buildConfigurationList = AA755B3D18FF66D40089195A /* Build configuration list for PBXProject "BeatBucket" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA755B3918FF66D40089195A;
+			productRefGroup = AA755B4318FF66D40089195A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA755B4118FF66D40089195A /* BeatBucket */,
+				AA755B6518FF66D40089195A /* BeatBucketTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA755B4018FF66D40089195A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA755B5C18FF66D40089195A /* Main_iPad.storyboard in Resources */,
+				AA755B6118FF66D40089195A /* Images.xcassets in Resources */,
+				AA755B5918FF66D40089195A /* Main_iPhone.storyboard in Resources */,
+				AA755B5018FF66D40089195A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA755B6418FF66D40089195A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA755B7218FF66D40089195A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA755B3E18FF66D40089195A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA755B8A19005FEF0089195A /* SidePanelControllerViewController.m in Sources */,
+				AA755B5618FF66D40089195A /* beatbucketAppDelegate.m in Sources */,
+				AA6735431902D07F005B6FDB /* SCYouViewController.m in Sources */,
+				AA67353C1902C66E005B6FDB /* LoginView.m in Sources */,
+				AA755B93190073EC0089195A /* ProfileController.m in Sources */,
+				AA755B9F190077C20089195A /* UIViewController+JASidePanel.m in Sources */,
+				AA755B90190073BD0089195A /* NearbyController.m in Sources */,
+				AA755B99190074560089195A /* NowPlayingController.m in Sources */,
+				AA755B9C190074C30089195A /* MyPlaylistsController.m in Sources */,
+				AA755B8719005F0E0089195A /* JASidePanelController.m in Sources */,
+				AA6735421902D07F005B6FDB /* SCSearchViewController.m in Sources */,
+				AA755B5218FF66D40089195A /* main.m in Sources */,
+				AA755B8D19006C590089195A /* LeftPanelTableViewController.m in Sources */,
+				AA755B84190038680089195A /* ExploreController.m in Sources */,
+				AA755B5F18FF66D40089195A /* beatbucketViewController.m in Sources */,
+				AA755B961900741A0089195A /* FriendsController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA755B6218FF66D40089195A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA755B7418FF66D40089195A /* BeatBucketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA755B6C18FF66D40089195A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA755B4118FF66D40089195A /* BeatBucket */;
+			targetProxy = AA755B6B18FF66D40089195A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA755B4E18FF66D40089195A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA755B4F18FF66D40089195A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA755B5718FF66D40089195A /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA755B5818FF66D40089195A /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		AA755B5A18FF66D40089195A /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA755B5B18FF66D40089195A /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		AA755B7018FF66D40089195A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA755B7118FF66D40089195A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA755B7518FF66D40089195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA755B7618FF66D40089195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA755B7818FF66D40089195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ethan/Documents/FacebookSDK,
+					/Users/ethan/Documents,
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				INFOPLIST_FILE = "BeatBucket/BeatBucket-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA755B7918FF66D40089195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ethan/Documents/FacebookSDK,
+					/Users/ethan/Documents,
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				INFOPLIST_FILE = "BeatBucket/BeatBucket-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AA755B7B18FF66D40089195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeatBucket.app/BeatBucket";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BeatBucketTests/BeatBucketTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AA755B7C18FF66D40089195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeatBucket.app/BeatBucket";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				INFOPLIST_FILE = "BeatBucketTests/BeatBucketTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA755B3D18FF66D40089195A /* Build configuration list for PBXProject "BeatBucket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA755B7518FF66D40089195A /* Debug */,
+				AA755B7618FF66D40089195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA755B7718FF66D40089195A /* Build configuration list for PBXNativeTarget "BeatBucket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA755B7818FF66D40089195A /* Debug */,
+				AA755B7918FF66D40089195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA755B7A18FF66D40089195A /* Build configuration list for PBXNativeTarget "BeatBucketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA755B7B18FF66D40089195A /* Debug */,
+				AA755B7C18FF66D40089195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA755B3A18FF66D40089195A /* Project object */;
+}
