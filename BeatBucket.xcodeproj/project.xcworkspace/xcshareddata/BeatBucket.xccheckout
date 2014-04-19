@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>68796AC4-4BA9-4030-98DF-750F27BEB32D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BeatBucket</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3D7A8A9F-2173-42E9-A063-C21E9C722D9B</key>
+		<string>https://github.com/EthanBlackburn/BeatBucket.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BeatBucket.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3D7A8A9F-2173-42E9-A063-C21E9C722D9B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/EthanBlackburn/BeatBucket.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3D7A8A9F-2173-42E9-A063-C21E9C722D9B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3D7A8A9F-2173-42E9-A063-C21E9C722D9B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BeatBucket</string>
+		</dict>
+	</array>
+</dict>
+</plist>
