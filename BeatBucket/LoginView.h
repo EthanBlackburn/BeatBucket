@@ -7,14 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
-@interface LoginView : UIViewController <FBLoginViewDelegate>
+@protocol LoginViewControllerDelegate;
 
-// FB methods
-@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
-@property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
+@interface LoginView : UIViewController
+
+//delegate
+@property (nonatomic, assign) id<LoginViewControllerDelegate> loginDelegate;
+
+@property (strong, nonatomic) IBOutlet UIImageView *userProfilePicture;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@end
+
+@protocol LoginViewControllerDelegate <NSObject>
+
+- (void)LoginViewController:(LoginView *)loginViewController
+        didExitSuccessfully:(BOOL)status
+                      error:(NSError *)error;
 @end

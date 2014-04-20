@@ -5,6 +5,7 @@
 //  Created by Ethan Blackburn on 4/17/14.
 //  Copyright (c) 2014 Ethan Blackburn. All rights reserved.
 //
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #import "LeftPanelTableViewController.h"
 
@@ -35,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColorFromRGB(0x2b2b2b);
     
 }
 
@@ -107,6 +109,19 @@
             break;
     }
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setBackgroundColor:UIColorFromRGB(0x2b2b2b)];
+    CAGradientLayer *selectedGrad = [CAGradientLayer layer];
+    selectedGrad.frame = cell.bounds;
+    selectedGrad.colors = [NSArray arrayWithObjects:(id)[UIColorFromRGB(0xff5e3a) CGColor], (id)[UIColorFromRGB(0xff2a68) CGColor], nil];
+    
+    [cell setSelectedBackgroundView:[[UIView alloc] init]];
+    [cell.selectedBackgroundView.layer insertSublayer:selectedGrad atIndex:0];
+    
+}
+
+
 
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "SCYouViewController.h"
-#import "SongStruct.h"
 #import <dispatch/dispatch.h>
 
 @interface SCYouViewController ()
@@ -230,24 +229,36 @@
     return [currentData count];
 }
 
+//soundcloud login VC
+- (void) login
+{
+    SCLoginViewControllerCompletionHandler handler = ^(NSError *error) {
+        if (SC_CANCELED(error)) {
+            NSLog(@"Canceled!");
+        } else if (error) {
+            NSLog(@"Error: %@", [error localizedDescription]);
+        } else {
+            NSLog(@"Done!");
+            account = [SCSoundCloud account];
+            [self profileData];
+        }
+    };
+    
+    [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL) {
+        SCLoginViewController *loginViewController;
+        
+        loginViewController = [SCLoginViewController
+                               loginViewControllerWithPreparedURL:preparedURL
+                               completionHandler:handler];
+        [self presentModalViewController:loginViewController animated:YES];
+    }];
+}
+
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *tempSong = (NSDictionary *)[currentData objectAtIndex:indexPath.row];
-    NSDictionary *user = [tempSong objectForKey:@"user"];
-    SongStruct *newSong = [[SongStruct alloc] initWithTitle:[tempSong objectForKey:@"title"] artist:[user objectForKey:@"username"] voteCount:1 songURL:[NSURL URLWithString:(NSString *)[tempSong objectForKey:@"stream_url"]] artwork:nil type:@"SC"];
-    //some images were being returned as NSNULL
-    if(![[tempSong objectForKey:@"artwork_url"] isKindOfClass:[NSNull class]]){
-        [newSong setArtworkURL:[NSURL URLWithString:[[tempSong objectForKey:@"artwork_url"] stringByReplacingOccurrencesOfString:@"large" withString:@"t300x300"]]];
-        [newSong imageFromURL:[newSong artworkURL]];
-        NSURL *imageURL = [NSURL URLWithString:[[tempSong objectForKey:@"artwork_url"] stringByReplacingOccurrencesOfString:@"large" withString:@"badge"]];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage *tempImage = [UIImage imageWithData:imageData];
-        [newSong setTinyArtwork:tempImage];
-        
-    }
-    NSLog(@"added %@",newSong.title);
-    [selectedSongs addObject:newSong];
+    [selectedSongs addObject:tempSong];
     
 }
 
@@ -255,20 +266,7 @@
 {
     
     NSDictionary *tempSong = (NSDictionary *)[currentData objectAtIndex:indexPath.row];
-    NSDictionary *user = [tempSong objectForKey:@"user"];
-    SongStruct *newSong = [[SongStruct alloc] initWithTitle:[tempSong objectForKey:@"title"] artist:[user objectForKey:@"username"] voteCount:1 songURL:[NSURL URLWithString:(NSString *)[tempSong objectForKey:@"stream_url"]] artwork:nil type:@"SC"];
-    //some images were being returned as NSNULL
-    if(![[tempSong objectForKey:@"artwork_url"] isKindOfClass:[NSNull class]]){
-        [newSong setArtworkURL:[NSURL URLWithString:[[tempSong objectForKey:@"artwork_url"] stringByReplacingOccurrencesOfString:@"large" withString:@"t300x300"]]];
-        [newSong imageFromURL:[newSong artworkURL]];
-        NSURL *imageURL = [NSURL URLWithString:[[tempSong objectForKey:@"artwork_url"] stringByReplacingOccurrencesOfString:@"large" withString:@"badge"]];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage *tempImage = [UIImage imageWithData:imageData];
-        [newSong setTinyArtwork:tempImage];
-        
-    }
-    NSLog(@"added %@",newSong.title);
-    [selectedSongs addObject:newSong];
+    [selectedSongs addObject:tempSong];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -329,30 +327,6 @@
     return cell;
 }
 
-//soundcloud login VC
-- (void) login
-{
-    SCLoginViewControllerCompletionHandler handler = ^(NSError *error) {
-        if (SC_CANCELED(error)) {
-            NSLog(@"Canceled!");
-        } else if (error) {
-            NSLog(@"Error: %@", [error localizedDescription]);
-        } else {
-            NSLog(@"Done!");
-            account = [SCSoundCloud account];
-            [self profileData];
-        }
-    };
-    
-    [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL) {
-        SCLoginViewController *loginViewController;
-        
-        loginViewController = [SCLoginViewController
-                               loginViewControllerWithPreparedURL:preparedURL
-                               completionHandler:handler];
-        [self presentModalViewController:loginViewController animated:YES];
-    }];
-}
 
 
 @end

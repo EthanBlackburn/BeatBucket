@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
 @interface FriendsController : UITableViewController
+
+@property (nonatomic) NSArray *fbFriends;
 
 @end

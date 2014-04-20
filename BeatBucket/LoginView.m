@@ -14,6 +14,8 @@
 
 @implementation LoginView
 
+@synthesize activityIndicator = _activityIndicator;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.loginView.readPermissions = @[@"basic_info", @"email"];
 
 }
 
@@ -36,24 +37,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-// This method will be called when the user information has been fetched
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
-                            user:(id<FBGraphUser>)user {
-    self.profilePictureView.profileID = user.id;
-    self.nameLabel.text = user.name;
+- (IBAction)loginButtonTouchHandler:(id)sender  {
+    // The permissions requested from the user
+    NSArray *permissionsArray = @[ @"basic_info", @"user_location", @"email"];
+    
+    // Login PFUser using Facebook
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        [_activityIndicator stopAnimating]; // Hide loading indicator
+        
+        if (!user) {
+            if (!error) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                [self.loginDelegate LoginViewController:self didExitSuccessfully:NO error:nil];
+                
+            } else {
+                NSLog(@"Uh oh. An error occurred: %@", error);
+                [self.loginDelegate LoginViewController:self didExitSuccessfully:NO error:error];
+            }
+        } else if (user.isNew) {
+            NSLog(@"User with facebook signed up and logged in!");
+            [self.loginDelegate LoginViewController:self didExitSuccessfully:YES error:nil];
+        } else {
+            NSLog(@"User with facebook logged in!");
+            [self.loginDelegate LoginViewController:self didExitSuccessfully:YES error:nil];
+        }
+    }];
+
 }
 
-// Logged-in user experience
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    self.statusLabel.text = @"You're logged in as";
-}
-
-// Logged-out user experience
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    self.profilePictureView.profileID = nil;
-    self.nameLabel.text = @"";
-    self.statusLabel.text= @"You're not logged in!";
-}
 
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {

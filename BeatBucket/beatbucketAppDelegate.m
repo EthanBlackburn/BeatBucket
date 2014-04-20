@@ -17,13 +17,22 @@
 #import "FriendsController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import "SCUI.h"
+
 
 @implementation beatbucketAppDelegate
 
++ (void) initialize
+{
+    [SCSoundCloud setClientID:@"259fbc74e78e72b60dd7b0efafa6467a"
+                       secret:@"16acdc69892a9776ed42e4409079f194"
+                  redirectURL:[NSURL URLWithString:@"BeatBucket://oauth"]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x55efcb)];
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xff2835)];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,nil]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -63,6 +72,16 @@
     
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    //get fb friends
+    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
+    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                  NSDictionary* result,
+                                                  NSError *error) {
+        
+        leftPanel.Friends.fbFriends = result[@"data"];
+        NSLog(@"retrieved %d friends",leftPanel.Friends.fbFriends.count);
+    }];
     return YES;
 }
 							

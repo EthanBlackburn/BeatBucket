@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1B4D59314C469CB10D236E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7616778B80464BA5BFB38360 /* libPods.a */; };
 		AA6735231902C203005B6FDB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735221902C203005B6FDB /* FacebookSDK.framework */; };
 		AA6735271902C3FE005B6FDB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735261902C3FE005B6FDB /* Parse.framework */; };
 		AA6735291902C438005B6FDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735281902C438005B6FDB /* AudioToolbox.framework */; };
@@ -21,6 +22,18 @@
 		AA67353C1902C66E005B6FDB /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67353B1902C66E005B6FDB /* LoginView.m */; };
 		AA6735421902D07F005B6FDB /* SCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67353F1902D07F005B6FDB /* SCSearchViewController.m */; };
 		AA6735431902D07F005B6FDB /* SCYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6735411902D07F005B6FDB /* SCYouViewController.m */; };
+		AA67356E1902D4E5005B6FDB /* libJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67355C1902D42F005B6FDB /* libJSONKit.a */; };
+		AA67356F1902D4E5005B6FDB /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735671902D43A005B6FDB /* libOAuth2Client.a */; };
+		AA6735701902D4E5005B6FDB /* libOHAttributedLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67356D1902D441005B6FDB /* libOHAttributedLabel.a */; };
+		AA6735711902D4E5005B6FDB /* libSoundCloudAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67354C1902D3F5005B6FDB /* libSoundCloudAPI.a */; };
+		AA6735721902D4E5005B6FDB /* libSoundCloudUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735531902D425005B6FDB /* libSoundCloudUI.a */; };
+		AA6735751902D4F2005B6FDB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735731902D4F2005B6FDB /* AddressBook.framework */; };
+		AA6735761902D4F2005B6FDB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735741902D4F2005B6FDB /* AddressBookUI.framework */; };
+		AA6735781902D501005B6FDB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6735771902D501005B6FDB /* CoreText.framework */; };
+		AA67357C1902DEAF005B6FDB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA67357B1902DEAF005B6FDB /* Social.framework */; };
+		AA67357F1902F806005B6FDB /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67357E1902F806005B6FDB /* FriendTableViewController.m */; };
+		AA673582190308C8005B6FDB /* ProfileBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA673581190308C8005B6FDB /* ProfileBackgroundView.m */; };
+		AA67359F1904433D005B6FDB /* PlaylistWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = AA67359E1904433D005B6FDB /* PlaylistWizard.m */; };
 		AA755B4618FF66D40089195A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4518FF66D40089195A /* Foundation.framework */; };
 		AA755B4818FF66D40089195A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4718FF66D40089195A /* CoreGraphics.framework */; };
 		AA755B4A18FF66D40089195A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA755B4918FF66D40089195A /* UIKit.framework */; };
@@ -49,6 +62,69 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA6735491902D3F5005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6735441902D3F5005B6FDB /* SoundCloudAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94535F86123FAFDF00BD668A;
+			remoteInfo = SoundCloudAPI.framework;
+		};
+		AA67354B1902D3F5005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6735441902D3F5005B6FDB /* SoundCloudAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SoundCloudAPI;
+		};
+		AA6735521902D425005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA67354D1902D425005B6FDB /* SoundCloudUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6EF8C6113F929D700B20B40;
+			remoteInfo = libSoundCloudUI;
+		};
+		AA6735541902D425005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA67354D1902D425005B6FDB /* SoundCloudUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62E0CE5148FB27100BE8F14;
+			remoteInfo = SoundCloudUI.framework;
+		};
+		AA67355B1902D42F005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6735561902D42F005B6FDB /* JSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6803523148F6D22008A51BA;
+			remoteInfo = libJSONKit;
+		};
+		AA67355D1902D42F005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6735561902D42F005B6FDB /* JSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6AE0202148F825C0004909F;
+			remoteInfo = JSONKit.framework;
+		};
+		AA6735641902D43A005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA67355F1902D43A005B6FDB /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
+			remoteInfo = OAuth2Client.framework;
+		};
+		AA6735661902D43A005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA67355F1902D43A005B6FDB /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+		AA67356C1902D441005B6FDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6735681902D441005B6FDB /* OHAttributedLabel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62728FA148F70DF00314599;
+			remoteInfo = OHAttributedLabel;
+		};
 		AA755B6B18FF66D40089195A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA755B3A18FF66D40089195A /* Project object */;
@@ -59,6 +135,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62A0F5248C3D49419D47EEB6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7616778B80464BA5BFB38360 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6735221902C203005B6FDB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		AA6735261902C3FE005B6FDB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AA6735281902C438005B6FDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -76,6 +154,21 @@
 		AA67353F1902D07F005B6FDB /* SCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSearchViewController.m; sourceTree = "<group>"; };
 		AA6735401902D07F005B6FDB /* SCYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYouViewController.h; sourceTree = "<group>"; };
 		AA6735411902D07F005B6FDB /* SCYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYouViewController.m; sourceTree = "<group>"; };
+		AA6735441902D3F5005B6FDB /* SoundCloudAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudAPI.xcodeproj; path = CocoaSoundCloudAPI/SoundCloudAPI.xcodeproj; sourceTree = "<group>"; };
+		AA67354D1902D425005B6FDB /* SoundCloudUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudUI.xcodeproj; path = CocoaSoundCloudUI/SoundCloudUI.xcodeproj; sourceTree = "<group>"; };
+		AA6735561902D42F005B6FDB /* JSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONKit.xcodeproj; path = JSONKit/JSONKit.xcodeproj; sourceTree = "<group>"; };
+		AA67355F1902D43A005B6FDB /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
+		AA6735681902D441005B6FDB /* OHAttributedLabel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OHAttributedLabel.xcodeproj; path = OHAttributedLabel/OHAttributedLabel.xcodeproj; sourceTree = "<group>"; };
+		AA6735731902D4F2005B6FDB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		AA6735741902D4F2005B6FDB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		AA6735771902D501005B6FDB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		AA67357B1902DEAF005B6FDB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AA67357D1902F806005B6FDB /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
+		AA67357E1902F806005B6FDB /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
+		AA673580190308C8005B6FDB /* ProfileBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileBackgroundView.h; sourceTree = "<group>"; };
+		AA673581190308C8005B6FDB /* ProfileBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileBackgroundView.m; sourceTree = "<group>"; };
+		AA67359D1904433D005B6FDB /* PlaylistWizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistWizard.h; sourceTree = "<group>"; };
+		AA67359E1904433D005B6FDB /* PlaylistWizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistWizard.m; sourceTree = "<group>"; };
 		AA755B4218FF66D40089195A /* BeatBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA755B4518FF66D40089195A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA755B4718FF66D40089195A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,6 +216,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA67357C1902DEAF005B6FDB /* Social.framework in Frameworks */,
+				AA6735781902D501005B6FDB /* CoreText.framework in Frameworks */,
+				AA6735751902D4F2005B6FDB /* AddressBook.framework in Frameworks */,
+				AA6735761902D4F2005B6FDB /* AddressBookUI.framework in Frameworks */,
+				AA67356E1902D4E5005B6FDB /* libJSONKit.a in Frameworks */,
+				AA67356F1902D4E5005B6FDB /* libOAuth2Client.a in Frameworks */,
+				AA6735701902D4E5005B6FDB /* libOHAttributedLabel.a in Frameworks */,
+				AA6735711902D4E5005B6FDB /* libSoundCloudAPI.a in Frameworks */,
+				AA6735721902D4E5005B6FDB /* libSoundCloudUI.a in Frameworks */,
 				AA6735391902C483005B6FDB /* SystemConfiguration.framework in Frameworks */,
 				AA6735371902C479005B6FDB /* StoreKit.framework in Frameworks */,
 				AA6735351902C472005B6FDB /* Security.framework in Frameworks */,
@@ -137,6 +239,7 @@
 				AA755B4A18FF66D40089195A /* UIKit.framework in Frameworks */,
 				AA755B4618FF66D40089195A /* Foundation.framework in Frameworks */,
 				AA6735271902C3FE005B6FDB /* Parse.framework in Frameworks */,
+				1A1B4D59314C469CB10D236E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,13 +267,63 @@
 			path = SoundCloudView;
 			sourceTree = "<group>";
 		};
+		AA6735451902D3F5005B6FDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA67354A1902D3F5005B6FDB /* SoundCloudAPI.framework */,
+				AA67354C1902D3F5005B6FDB /* libSoundCloudAPI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA67354E1902D425005B6FDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6735531902D425005B6FDB /* libSoundCloudUI.a */,
+				AA6735551902D425005B6FDB /* SoundCloudUI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6735571902D42F005B6FDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA67355C1902D42F005B6FDB /* libJSONKit.a */,
+				AA67355E1902D42F005B6FDB /* JSONKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6735601902D43A005B6FDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6735651902D43A005B6FDB /* OAuth2Client.framework */,
+				AA6735671902D43A005B6FDB /* libOAuth2Client.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6735691902D441005B6FDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA67356D1902D441005B6FDB /* libOHAttributedLabel.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AA755B3918FF66D40089195A = {
 			isa = PBXGroup;
 			children = (
+				AA6735681902D441005B6FDB /* OHAttributedLabel.xcodeproj */,
+				AA67355F1902D43A005B6FDB /* OAuth2Client.xcodeproj */,
+				AA6735561902D42F005B6FDB /* JSONKit.xcodeproj */,
+				AA67354D1902D425005B6FDB /* SoundCloudUI.xcodeproj */,
+				AA6735441902D3F5005B6FDB /* SoundCloudAPI.xcodeproj */,
 				AA755B4B18FF66D40089195A /* BeatBucket */,
 				AA755B6D18FF66D40089195A /* BeatBucketTests */,
 				AA755B4418FF66D40089195A /* Frameworks */,
 				AA755B4318FF66D40089195A /* Products */,
+				62A0F5248C3D49419D47EEB6 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +339,10 @@
 		AA755B4418FF66D40089195A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA67357B1902DEAF005B6FDB /* Social.framework */,
+				AA6735771902D501005B6FDB /* CoreText.framework */,
+				AA6735731902D4F2005B6FDB /* AddressBook.framework */,
+				AA6735741902D4F2005B6FDB /* AddressBookUI.framework */,
 				AA6735381902C483005B6FDB /* SystemConfiguration.framework */,
 				AA6735361902C479005B6FDB /* StoreKit.framework */,
 				AA6735341902C472005B6FDB /* Security.framework */,
@@ -201,6 +358,7 @@
 				AA755B4718FF66D40089195A /* CoreGraphics.framework */,
 				AA755B4918FF66D40089195A /* UIKit.framework */,
 				AA755B6718FF66D40089195A /* XCTest.framework */,
+				7616778B80464BA5BFB38360 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +370,10 @@
 				AA755B5418FF66D40089195A /* beatbucketAppDelegate.h */,
 				AA755B5518FF66D40089195A /* beatbucketAppDelegate.m */,
 				AA755B5718FF66D40089195A /* Main_iPhone.storyboard */,
+				AA67359D1904433D005B6FDB /* PlaylistWizard.h */,
+				AA67359E1904433D005B6FDB /* PlaylistWizard.m */,
+				AA67357D1902F806005B6FDB /* FriendTableViewController.h */,
+				AA67357E1902F806005B6FDB /* FriendTableViewController.m */,
 				AA67353A1902C66E005B6FDB /* LoginView.h */,
 				AA67353B1902C66E005B6FDB /* LoginView.m */,
 				AA755B97190074560089195A /* NowPlayingController.h */,
@@ -220,6 +382,8 @@
 				AA755B9B190074C30089195A /* MyPlaylistsController.m */,
 				AA755B91190073EC0089195A /* ProfileController.h */,
 				AA755B92190073EC0089195A /* ProfileController.m */,
+				AA673580190308C8005B6FDB /* ProfileBackgroundView.h */,
+				AA673581190308C8005B6FDB /* ProfileBackgroundView.m */,
 				AA755B8E190073BD0089195A /* NearbyController.h */,
 				AA755B8F190073BD0089195A /* NearbyController.m */,
 				AA755B82190038680089195A /* ExploreController.h */,
@@ -287,9 +451,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA755B7718FF66D40089195A /* Build configuration list for PBXNativeTarget "BeatBucket" */;
 			buildPhases = (
+				284259E1E6904EAE8BE34928 /* Check Pods Manifest.lock */,
 				AA755B3E18FF66D40089195A /* Sources */,
 				AA755B3F18FF66D40089195A /* Frameworks */,
 				AA755B4018FF66D40089195A /* Resources */,
+				204422BF608E45CDA035A2DE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,6 +494,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ethan Blackburn";
 				TargetAttributes = {
+					AA755B4118FF66D40089195A = {
+						DevelopmentTeam = 8X5P8C448L;
+					};
 					AA755B6518FF66D40089195A = {
 						TestTargetID = AA755B4118FF66D40089195A;
 					};
@@ -344,6 +513,28 @@
 			mainGroup = AA755B3918FF66D40089195A;
 			productRefGroup = AA755B4318FF66D40089195A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA6735571902D42F005B6FDB /* Products */;
+					ProjectRef = AA6735561902D42F005B6FDB /* JSONKit.xcodeproj */;
+				},
+				{
+					ProductGroup = AA6735601902D43A005B6FDB /* Products */;
+					ProjectRef = AA67355F1902D43A005B6FDB /* OAuth2Client.xcodeproj */;
+				},
+				{
+					ProductGroup = AA6735691902D441005B6FDB /* Products */;
+					ProjectRef = AA6735681902D441005B6FDB /* OHAttributedLabel.xcodeproj */;
+				},
+				{
+					ProductGroup = AA6735451902D3F5005B6FDB /* Products */;
+					ProjectRef = AA6735441902D3F5005B6FDB /* SoundCloudAPI.xcodeproj */;
+				},
+				{
+					ProductGroup = AA67354E1902D425005B6FDB /* Products */;
+					ProjectRef = AA67354D1902D425005B6FDB /* SoundCloudUI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AA755B4118FF66D40089195A /* BeatBucket */,
@@ -351,6 +542,72 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AA67354A1902D3F5005B6FDB /* SoundCloudAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SoundCloudAPI.framework;
+			remoteRef = AA6735491902D3F5005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA67354C1902D3F5005B6FDB /* libSoundCloudAPI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSoundCloudAPI.a;
+			remoteRef = AA67354B1902D3F5005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA6735531902D425005B6FDB /* libSoundCloudUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSoundCloudUI.a;
+			remoteRef = AA6735521902D425005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA6735551902D425005B6FDB /* SoundCloudUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SoundCloudUI.framework;
+			remoteRef = AA6735541902D425005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA67355C1902D42F005B6FDB /* libJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJSONKit.a;
+			remoteRef = AA67355B1902D42F005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA67355E1902D42F005B6FDB /* JSONKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSONKit.framework;
+			remoteRef = AA67355D1902D42F005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA6735651902D43A005B6FDB /* OAuth2Client.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2Client.framework;
+			remoteRef = AA6735641902D43A005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA6735671902D43A005B6FDB /* libOAuth2Client.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuth2Client.a;
+			remoteRef = AA6735661902D43A005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA67356D1902D441005B6FDB /* libOHAttributedLabel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOHAttributedLabel.a;
+			remoteRef = AA67356C1902D441005B6FDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AA755B4018FF66D40089195A /* Resources */ = {
@@ -374,6 +631,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		204422BF608E45CDA035A2DE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		284259E1E6904EAE8BE34928 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA755B3E18FF66D40089195A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -384,16 +674,19 @@
 				AA6735431902D07F005B6FDB /* SCYouViewController.m in Sources */,
 				AA67353C1902C66E005B6FDB /* LoginView.m in Sources */,
 				AA755B93190073EC0089195A /* ProfileController.m in Sources */,
+				AA67359F1904433D005B6FDB /* PlaylistWizard.m in Sources */,
 				AA755B9F190077C20089195A /* UIViewController+JASidePanel.m in Sources */,
 				AA755B90190073BD0089195A /* NearbyController.m in Sources */,
 				AA755B99190074560089195A /* NowPlayingController.m in Sources */,
 				AA755B9C190074C30089195A /* MyPlaylistsController.m in Sources */,
+				AA67357F1902F806005B6FDB /* FriendTableViewController.m in Sources */,
 				AA755B8719005F0E0089195A /* JASidePanelController.m in Sources */,
 				AA6735421902D07F005B6FDB /* SCSearchViewController.m in Sources */,
 				AA755B5218FF66D40089195A /* main.m in Sources */,
 				AA755B8D19006C590089195A /* LeftPanelTableViewController.m in Sources */,
 				AA755B84190038680089195A /* ExploreController.m in Sources */,
 				AA755B5F18FF66D40089195A /* beatbucketViewController.m in Sources */,
+				AA673582190308C8005B6FDB /* ProfileBackgroundView.m in Sources */,
 				AA755B961900741A0089195A /* FriendsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,9 +819,12 @@
 		};
 		AA755B7818FF66D40089195A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62A0F5248C3D49419D47EEB6 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ethan/Documents/FacebookSDK,
@@ -537,17 +833,30 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$PROJECT_DIR/**",
+				);
 				INFOPLIST_FILE = "BeatBucket/BeatBucket-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		AA755B7918FF66D40089195A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62A0F5248C3D49419D47EEB6 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ethan/Documents/FacebookSDK,
@@ -556,8 +865,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeatBucket/BeatBucket-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$PROJECT_DIR/**",
+				);
 				INFOPLIST_FILE = "BeatBucket/BeatBucket-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

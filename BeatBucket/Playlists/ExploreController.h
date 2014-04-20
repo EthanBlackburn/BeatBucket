@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "LoginView.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
 
-@interface ExploreController : UITableViewController
+@interface ExploreController : UITableViewController <LoginViewControllerDelegate>
+
+
 
 @end

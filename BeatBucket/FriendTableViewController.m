@@ -1,19 +1,19 @@
 //
-//  NearbyController.m
+//  FriendTableViewController.m
 //  BeatBucket
 //
-//  Created by Ethan Blackburn on 4/17/14.
+//  Created by Ethan Blackburn on 4/19/14.
 //  Copyright (c) 2014 Ethan Blackburn. All rights reserved.
 //
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#import "NearbyController.h"
+#import "FriendTableViewController.h"
 
-@interface NearbyController ()
+@interface FriendTableViewController ()
 
 @end
 
-@implementation NearbyController
+@implementation FriendTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,11 +28,20 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem.tintColor = UIColorFromRGB(0xf7f7f7);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
+    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                  NSDictionary* result,
+                                                  NSError *error) {
+        
+        NSArray *friends = result[@"data"];
+        for (NSDictionary<FBGraphUser>* friend in friends) {
+            NSLog(@"Found a friend: %@", friend.name);
+            // 3
+            // Add the friend to the list of friends in the DataStore
+            [self.fbFriends setObject:friend forKey:friend.id];
+        }
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,5 +125,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

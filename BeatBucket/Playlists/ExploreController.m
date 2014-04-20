@@ -5,8 +5,10 @@
 //  Created by Ethan Blackburn on 4/17/14.
 //  Copyright (c) 2014 Ethan Blackburn. All rights reserved.
 //
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #import "ExploreController.h"
+#import "LoginView.h"
 
 
 @interface ExploreController ()
@@ -20,16 +22,21 @@
 {
     [super viewDidLoad];
     
-    NSArray *permissions = @[@"basic_info", @"email"];
-    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
+    [self.view setBackgroundColor: UIColorFromRGB(0x7f7f7f)];
+    self.navigationItem.leftBarButtonItem.tintColor = UIColorFromRGB(0xf7f7f7);
+    if (!([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
+    {
+        LoginView *fbLogin = [[LoginView alloc] init];
+        fbLogin.loginDelegate = self;
+        if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]){
+            [self presentViewController:fbLogin animated:YES completion:nil];
         } else {
-            NSLog(@"User logged in through Facebook!");
+            [self presentModalViewController:fbLogin animated:YES];
+        
         }
-    }];
+    }
+    
     
 }
 
@@ -37,6 +44,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)LoginViewController:(LoginView *)loginViewController didExitSuccessfully:(BOOL)status error:(NSError *)error{
+    NSLog(@"success!");
 }
 
 #pragma mark - Table view data source
@@ -55,16 +66,15 @@
     return 0;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExploreCell" forIndexPath:indexPath];
     
-    // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,5 +124,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //cell background
+    [cell setBackgroundColor:UIColorFromRGB(0x404040)];
+    
+    //cell selection
+    UIView *selectionColor = [[UIView alloc] init];
+    selectionColor.backgroundColor = UIColorFromRGB(0xff7e61);
+    cell.selectedBackgroundView = selectionColor;
+    
+    //cell separator
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.contentView.frame.size.height - 1.0, cell.contentView.frame.size.width, 1)];
+    
+    [cell.contentView addSubview:lineView];
+    
+    CAGradientLayer *selectedGrad1 = [CAGradientLayer layer];
+    selectedGrad1.frame = lineView.bounds;
+    selectedGrad1.colors = [NSArray arrayWithObjects:(id)[UIColorFromRGB(0xff5e3a) CGColor], (id)[UIColorFromRGB(0xff2a68) CGColor], nil];
+    [selectedGrad1 setStartPoint:CGPointMake(0.0, 0.5)];
+    [selectedGrad1 setEndPoint:CGPointMake(1.0, 0.5)];
+    
+    [lineView.layer insertSublayer:selectedGrad1 atIndex:0];
+}
 
 @end

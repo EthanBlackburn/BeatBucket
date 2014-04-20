@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>68796AC4-4BA9-4030-98DF-750F27BEB32D</string>
+	<string>376F5039-FF9E-4B81-ABCC-27423834C9A9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BeatBucket</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -24,21 +24,21 @@
 		<string>git://github.com/nxtbgthng/JSONKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BeatBucket.xcodeproj/project.xcworkspace</string>
+	<string>BeatBucket.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3D7A8A9F-2173-42E9-A063-C21E9C722D9B</key>
-		<string>../..</string>
+		<string>..</string>
 		<key>6E1288DD-EFD0-494E-95AE-0135A42802AA</key>
-		<string>../../OAuth2Client</string>
+		<string>../OAuth2Client</string>
 		<key>9E027B1C-76AB-4119-8975-A31F919F8A17</key>
-		<string>../../CocoaSoundCloudAPI</string>
+		<string>../CocoaSoundCloudAPI</string>
 		<key>A3365034-7804-4B6D-B96C-62E0A87E0300</key>
-		<string>../../OHAttributedLabel</string>
+		<string>../OHAttributedLabel</string>
 		<key>ABC5F8A3-66CC-4148-A33D-6F4C8C39042D</key>
-		<string>../../CocoaSoundCloudUI</string>
+		<string>../CocoaSoundCloudUI</string>
 		<key>DEC08D3A-4FF0-4CEB-BD64-B358601D6556</key>
-		<string>../../JSONKit</string>
+		<string>../JSONKit</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/EthanBlackburn/BeatBucket.git</string>
