@@ -66,7 +66,8 @@
 {
     [super viewDidLoad];
     NSLog(@"%@",self.navigationController);
-    downloadQueue =  dispatch_queue_create("com.queue.SCget", NULL);
+    if([SCSoundCloud account])
+        [self profileData];
     selectedSongs = [[NSMutableArray alloc] init];
     songButtons = [[NSMutableArray alloc] init];
     tracks = [[NSMutableArray alloc] init];
@@ -74,7 +75,6 @@
     posts =[[NSMutableArray alloc] init];
     account = [SCSoundCloud account];
     self.tableView.rowHeight = 65;
-    [self profileData];
     
 }
 
@@ -132,13 +132,13 @@
     
     NSString *tracksURL = @"https://api.soundcloud.com/me/favorites.json";
     
-    dispatch_async(downloadQueue, ^{
+
     [SCRequest performMethod:SCRequestMethodGET
                   onResource:[NSURL URLWithString:tracksURL]
              usingParameters:nil
                  withAccount:account
       sendingProgressHandler:nil
-             responseHandler:trackHandler]; });
+             responseHandler:trackHandler];
     
     //get users tracks from soundloud. the JSON response is an array of tracks. Each track is a dictionary object with its info.
     SCRequestResponseHandler postsHandler;
@@ -163,13 +163,13 @@
     
     NSString *postsURL = @"https://api.soundcloud.com/me/tracks.json";
     
-    dispatch_async(downloadQueue, ^{
+    
     [SCRequest performMethod:SCRequestMethodGET
                   onResource:[NSURL URLWithString:postsURL]
              usingParameters:nil
                  withAccount:account
       sendingProgressHandler:nil
-             responseHandler:postsHandler]; });
+             responseHandler:postsHandler];
     
     //get users posts
     SCRequestResponseHandler playlistsHandler;
@@ -191,13 +191,13 @@
     
     NSString *playlistsURL = @"https://api.soundcloud.com/me/playlists.json";
     
-    dispatch_async(downloadQueue, ^{
+    
     [SCRequest performMethod:SCRequestMethodGET
                   onResource:[NSURL URLWithString:playlistsURL]
              usingParameters:nil
                  withAccount:account
       sendingProgressHandler:nil
-             responseHandler:playlistsHandler]; });
+             responseHandler:playlistsHandler];
     
     
 }

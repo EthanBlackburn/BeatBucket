@@ -27,14 +27,78 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem.tintColor = UIColorFromRGB(0xf7f7f7);
+    self.tableView.backgroundColor = UIColorFromRGB(0x555555);
     
+    self.users = [[NSMutableArray alloc] init];
+    self.notUsers = [[NSMutableArray alloc] init];
+    self.currentData = self.users; //just to initialize
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationItem.leftBarButtonItem.tintColor = UIColorFromRGB(0xf7f7f7);
+    NSLog(@"friends %d",self.fbFriends.count);
+    NSLog(@"users %d",self.users.count);
+    NSLog(@"not users %d",self.notUsers.count);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//switch active data according to segmented control
+-(IBAction)segmentedControl{
+    if(self.segControl.selectedSegmentIndex == 0){
+        self.currentData = self.users;
+    }
+    else{
+        self.currentData = self.notUsers;
+    }
+    [self.tableView reloadData];
+}
+
+-(void)checkForFriends:(NSNotification *) notification{
+    NSLog(@"fetching friends..");
+    if([[notification name] isEqualToString:@"login"]){
+        
+        // Issue a Facebook Graph API request to get your user's friend list
+        [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                // result will contain an array with your user's friends in the "data" key
+                self.fbFriends = [result objectForKey:@"data"];
+                NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:self.fbFriends.count];
+                // Create a list of friends' Facebook IDs
+                for (NSDictionary *friendObject in self.fbFriends) {
+                    [friendIds addObject:[friendObject objectForKey:@"id"]];
+                    
+                }
+                
+                // Construct a PFUser query that will find friends whose facebook ids
+                // are contained in the current user's friend list.
+                PFQuery *friendQuery = [PFUser query];
+                [friendQuery whereKey:@"fbId" containedIn:friendIds];
+                
+                // findObjects will return a list of PFUsers that are friends
+                // with the current user
+                self.users = [friendQuery findObjects];
+            }
+        }];
+        
+        //difference between self.fbfriends and self.users
+        [self.notUsers addObjectsFromArray:self.fbFriends];
+        [self.notUsers removeObjectsInArray:self.users];
+        
+        if(self.segControl.selectedSegmentIndex == 0){
+            self.currentData = self.users;
+        }
+        else{
+            self.currentData = self.notUsers;
+        }
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table view data source
@@ -50,7 +114,7 @@
 {
 
     // Return the number of rows in the section.
-    return self.fbFriends.count;
+    return self.currentData.count;
 }
 
 
@@ -76,26 +140,14 @@
     [cell.contentView addSubview:nameLabel];
     [nameLabel setText: friend[@"name"]];
     
-    //cell background
-    [cell setBackgroundColor:UIColorFromRGB(0x404040)];
-    
-    //cell selection
-    UIView *selectionColor = [[UIView alloc] init];
-    selectionColor.backgroundColor = UIColorFromRGB(0xff7e61);
-    cell.selectedBackgroundView = selectionColor;
-    
     //cell separator
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.contentView.frame.size.height - 1.0, cell.contentView.frame.size.width, 1)];
+    lineView.tag = 4;
     
     [cell.contentView addSubview:lineView];
     
-    CAGradientLayer *selectedGrad = [CAGradientLayer layer];
-    selectedGrad.frame = lineView.bounds;
-    selectedGrad.colors = [NSArray arrayWithObjects:(id)[UIColorFromRGB(0xff5e3a) CGColor], (id)[UIColorFromRGB(0xff2a68) CGColor], nil];
-    [selectedGrad setStartPoint:CGPointMake(0.0, 0.5)];
-    [selectedGrad setEndPoint:CGPointMake(1.0, 0.5)];
+    lineView.backgroundColor = UIColorFromRGB(0x7f7f7f);
     
-    [lineView.layer insertSublayer:selectedGrad atIndex:0];
     
     return cell;
 }
@@ -123,27 +175,36 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //cell background
-    [cell setBackgroundColor:UIColorFromRGB(0x404040)];
+//called after user releases selection
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIView *separatorLine = (UIView *)[cell viewWithTag:4];
+    separatorLine.backgroundColor = UIColorFromRGB(0xff2835);
+}
+
+//separator line color return to normal after deselect
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIView *separatorLine = (UIView *)[cell viewWithTag:4];
+    separatorLine.backgroundColor = UIColorFromRGB(0x7f7f7f);
+}
+
+//need this method to color separator line during highlight
+-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIView *separatorLine = (UIView *)[cell viewWithTag:4];
+    separatorLine.backgroundColor = UIColorFromRGB(0xff2835);
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     //cell selection
     UIView *selectionColor = [[UIView alloc] init];
     selectionColor.backgroundColor = UIColorFromRGB(0x2b2b2b);
     cell.selectedBackgroundView = selectionColor;
-    
-    //cell separator
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.contentView.frame.size.height - 1.0, cell.contentView.frame.size.width, 1)];
-    
-    [cell.contentView addSubview:lineView];
-    
-    CAGradientLayer *selectedGrad = [CAGradientLayer layer];
-    selectedGrad.frame = lineView.bounds;
-    selectedGrad.colors = [NSArray arrayWithObjects:(id)[UIColorFromRGB(0xff5e3a) CGColor], (id)[UIColorFromRGB(0xff2a68) CGColor], nil];
-    [selectedGrad setStartPoint:CGPointMake(0.0, 0.5)];
-    [selectedGrad setEndPoint:CGPointMake(1.0, 0.5)];
-    
-    [lineView.layer insertSublayer:selectedGrad atIndex:0];
 }
 
 

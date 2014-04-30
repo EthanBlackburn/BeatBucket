@@ -13,7 +13,7 @@
 #import "UIViewController+JASidePanel.h"
 
 
-@interface ExploreController : UITableViewController <LoginViewControllerDelegate>
+@interface ExploreController : UITableViewController <LoginViewControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 
 

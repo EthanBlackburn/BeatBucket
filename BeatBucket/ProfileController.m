@@ -55,6 +55,29 @@
     }];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    if(![PFUser currentUser]){
+        // Create the log in view controller
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        LoginView *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+        [loginViewController setDelegate:self];
+        
+        // Present the log in view controller
+        [self presentViewController:loginViewController animated:YES completion:NULL];
+    }
+    else{
+        //if we are already logged in, get friends
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:self];
+    }
+}
+
+-(void)LoginViewController:(LoginView *)loginViewController didExitSuccessfully:(BOOL)status error:(NSError *)error{
+    NSLog(@"success!");
+    [self dismissViewControllerAnimated:YES completion:nil];//dismiss login view
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:self];//post friend notification
+
+}
+
 // Called every time a chunk of the data is received
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.imageData appendData:data]; // Build the image

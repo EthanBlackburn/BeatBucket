@@ -7,14 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "MBProgressHUD.h"
+#import "SCYouViewController.h"
 
-@interface PlaylistWizard : UITableViewController
+@protocol playlistWizardDelegate;
 
+@interface PlaylistWizard : UITableViewController <UITextFieldDelegate, SCYouViewControllerDelegate>
+
+@property (nonatomic) id<playlistWizardDelegate> delegate;
 @property (nonatomic) IBOutlet UISwitch *privacySwitch;
 @property (nonatomic) IBOutlet UITextField *nameInput;
-@property (nonatomic) IBOutlet UIButton *nextButton;
+@property (nonatomic) IBOutlet UITextField *passwordInput;
+@property (nonatomic) IBOutlet UIButton *doneButton;
 @property (nonatomic) IBOutlet UIButton *cancelButton;
+@property (nonatomic) NSArray *selectedSongs;
 
 -(IBAction) privacyHandler;
+-(IBAction) doneHandler;
+-(IBAction) cancelHandler;
 
+@end
+
+@protocol playlistWizardDelegate<NSObject>
+
+- (void)wizardViewController:(PlaylistWizard *)YouViewController
+           didChooseSongs:(BOOL)empty;
 @end

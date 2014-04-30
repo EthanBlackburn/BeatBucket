@@ -80,6 +80,14 @@
     
 }
 
+-(void) logout{
+    [PFUser logOut]; //logout
+    [self.sidePanelController showCenterPanelAnimated:YES];
+    //explore tab presents login view
+    [self.sidePanelController setCenterPanel:[[UINavigationController alloc] initWithRootViewController:Explore]];
+
+}
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -107,17 +115,26 @@
             case 5:
             [self showProfile];
             break;
+            
+            case 6:
+            [self logout];
+            break;
     }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     [cell setBackgroundColor:UIColorFromRGB(0x2b2b2b)];
-    CAGradientLayer *selectedGrad = [CAGradientLayer layer];
+    /*CAGradientLayer *selectedGrad = [CAGradientLayer layer];
     selectedGrad.frame = cell.bounds;
     selectedGrad.colors = [NSArray arrayWithObjects:(id)[UIColorFromRGB(0xff5e3a) CGColor], (id)[UIColorFromRGB(0xff2a68) CGColor], nil];
     
     [cell setSelectedBackgroundView:[[UIView alloc] init]];
-    [cell.selectedBackgroundView.layer insertSublayer:selectedGrad atIndex:0];
+    [cell.selectedBackgroundView.layer insertSublayer:selectedGrad atIndex:0];*/
+    
+    //cell selection
+    UIView *selectionColor = [[UIView alloc] init];
+    selectionColor.backgroundColor = UIColorFromRGB(0xff2835);
+    cell.selectedBackgroundView = selectionColor;
     
 }
 

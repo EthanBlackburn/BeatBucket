@@ -8,7 +8,6 @@
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #import "ExploreController.h"
-#import "LoginView.h"
 
 
 @interface ExploreController ()
@@ -22,9 +21,9 @@
 {
     [super viewDidLoad];
     
-    [self.view setBackgroundColor: UIColorFromRGB(0x7f7f7f)];
+    [self.view setBackgroundColor: UIColorFromRGB(0x555555)];
     self.navigationItem.leftBarButtonItem.tintColor = UIColorFromRGB(0xf7f7f7);
-    if (!([PFUser currentUser] && // Check if a user is cached
+    /*if (!([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])) // Check if user is linked to Facebook
     {
         LoginView *fbLogin = [[LoginView alloc] init];
@@ -35,8 +34,20 @@
             [self presentModalViewController:fbLogin animated:YES];
         
         }
+    }*/
+    if(![PFUser currentUser]){
+        // Create the log in view controller
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        LoginView *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+        [loginViewController setDelegate:self];
+        
+        // Present the log in view controller
+        [self presentViewController:loginViewController animated:YES completion:NULL];
     }
-    
+    else{
+        //if we are already logged in, get friends
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:self];
+    }
     
 }
 
@@ -48,14 +59,15 @@
 
 -(void)LoginViewController:(LoginView *)loginViewController didExitSuccessfully:(BOOL)status error:(NSError *)error{
     NSLog(@"success!");
+    [self dismissViewControllerAnimated:YES completion:nil];//dismiss login view
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:self];//post friend notification
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+
     return 0;
 }
 

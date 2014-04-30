@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
+#import "LoginView.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
-@interface ProfileController : UIViewController <NSURLConnectionDelegate>
+@interface ProfileController : UIViewController <NSURLConnectionDelegate, LoginViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIImageView *userProfileImage;
 @property (nonatomic) IBOutlet UILabel *nameLabel;

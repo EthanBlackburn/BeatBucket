@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import "PlaylistWizard.h"
 
-@interface MyPlaylistsController : UITableViewController
+@interface MyPlaylistsController : UITableViewController <playlistWizardDelegate>
+
+@property (nonatomic) NSMutableArray *playlists;
+
 
 @end

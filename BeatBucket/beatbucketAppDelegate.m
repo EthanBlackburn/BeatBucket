@@ -45,6 +45,7 @@
     
     //facebook SDK
     [PFFacebookUtils initializeFacebook];
+
     
     // Override point for customization after application launch.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
@@ -57,31 +58,26 @@
     //add all view controllers to side bar
     [leftPanel setNearby:[storyboard instantiateViewControllerWithIdentifier:@"nearby"]];
     
-    [leftPanel setExplore:[storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];//start with explore
-    
     [leftPanel setFriends:[storyboard instantiateViewControllerWithIdentifier:@"friends"]];
+    //add observer to check for friends every time we login
+    [[NSNotificationCenter defaultCenter] addObserver:leftPanel.Friends
+                                             selector:@selector(checkForFriends:)
+                                                 name:@"login"
+                                               object:nil];
+    
+    [leftPanel setExplore:[storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];//start with explore
     
     [leftPanel setMyPlaylists:[storyboard instantiateViewControllerWithIdentifier:@"playlists"]];
     
     [leftPanel setProfile:[storyboard instantiateViewControllerWithIdentifier:@"profile"]];
     
     [leftPanel setNowPlaying:[storyboard instantiateViewControllerWithIdentifier:@"playing"]];
-
     
 	self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[leftPanel Explore]];
     
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    //get fb friends
-    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
-    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
-                                                  NSDictionary* result,
-                                                  NSError *error) {
-        
-        leftPanel.Friends.fbFriends = result[@"data"];
-        NSLog(@"retrieved %d friends",leftPanel.Friends.fbFriends.count);
-    }];
     return YES;
 }
 							

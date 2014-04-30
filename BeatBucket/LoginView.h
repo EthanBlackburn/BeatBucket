@@ -14,12 +14,13 @@
 @interface LoginView : UIViewController
 
 //delegate
-@property (nonatomic, assign) id<LoginViewControllerDelegate> loginDelegate;
-
-@property (strong, nonatomic) IBOutlet UIImageView *userProfilePicture;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (nonatomic, assign) id<LoginViewControllerDelegate> Delegate;
+@property (nonatomic) IBOutlet UIButton *exitBtn;
+@property (nonatomic) IBOutlet UIButton *fbLogin;
 @property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+- (IBAction)loginButtonTouchHandler;
+-(IBAction)cancelHandler;
 
 @end
 

@@ -25,6 +25,13 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    // If you create your views manually, you MUST override this method and use it to create your views.
+    // If you use Interface Builder to create your views, then you must NOT override this method.
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginButtonTouchHandler:(id)sender  {
+- (IBAction)loginButtonTouchHandler  {
     // The permissions requested from the user
     NSArray *permissionsArray = @[ @"basic_info", @"user_location", @"email"];
     
@@ -48,21 +55,29 @@
         if (!user) {
             if (!error) {
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
-                [self.loginDelegate LoginViewController:self didExitSuccessfully:NO error:nil];
+                [self.Delegate LoginViewController:self didExitSuccessfully:NO error:nil];
                 
             } else {
                 NSLog(@"Uh oh. An error occurred: %@", error);
-                [self.loginDelegate LoginViewController:self didExitSuccessfully:NO error:error];
+                [self.Delegate LoginViewController:self didExitSuccessfully:NO error:error];
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self.loginDelegate LoginViewController:self didExitSuccessfully:YES error:nil];
+            
+            [self loggedIn];
+    
         } else {
             NSLog(@"User with facebook logged in!");
-            [self.loginDelegate LoginViewController:self didExitSuccessfully:YES error:nil];
+            [self.Delegate LoginViewController:self didExitSuccessfully:YES error:nil];
+            
         }
     }];
 
+}
+
+-(IBAction)cancelHandler{
+    NSLog(@"Uh oh. The user cancelled the Facebook login.");
+    [self.Delegate LoginViewController:self didExitSuccessfully:NO error:nil];
 }
 
 
@@ -109,15 +124,26 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)loggedIn{
+    NSString *requestPath = @"me/?fields=name,location,email,id";
+    
+    FBRequest *request = [[FBRequest alloc] initWithSession:[PFFacebookUtils session] graphPath:requestPath];
+    
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            NSDictionary *userData = (NSDictionary *)result; // The result is a dictionary
+            
+            [[PFUser currentUser] setObject:[userData objectForKey:@"name"] forKey:@"name"];
+            
+            [[PFUser currentUser] setObject:[userData objectForKey:@"email"] forKey:@"email"];
+            
+            [[PFUser currentUser] saveInBackground];
+            
+            
+        }
+    }];
+    
+    [self.Delegate LoginViewController:self didExitSuccessfully:YES error:nil];
 }
-*/
 
 @end

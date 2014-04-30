@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <OAuth2Client/NXOAuth2.h>
 #import "SCUI.h"
 
 @protocol SCYouViewControllerDelegate;
 
 @interface SCYouViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    dispatch_queue_t downloadQueue;
-}
+
 
 @property (nonatomic) id<SCYouViewControllerDelegate> delegate;
 @property (nonatomic) IBOutlet UIImageView *profilePicture;
